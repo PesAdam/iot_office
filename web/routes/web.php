@@ -16,3 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('dashboard');
 });
+
+Route::get('/pracovisko', function() {
+    return view('card/office');
+});
+
+Route::get('/bezpecnost', 'App\Http\Controllers\SafetyController@show');
+
+
+Route::get('/kuchyna', function() {
+    return view('card/kitchen');
+});
+
+Route::get('/zamestnanci', function (){
+    return view('card/employes');
+});
