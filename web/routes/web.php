@@ -17,9 +17,7 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::get('/pracovisko', function() {
-    return view('card/office');
-});
+Route::get('/pracovisko', 'App\Http\Controllers\PracoviskoController@show');
 
 Route::get('/bezpecnost', 'App\Http\Controllers\SafetyController@show');
 
