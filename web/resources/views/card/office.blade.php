@@ -22,6 +22,7 @@
         }
         
         $average = $sum / $count;
+        
         $average_h = $sum_hum / $count_hum;
     ?>
 
