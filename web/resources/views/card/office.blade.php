@@ -10,13 +10,19 @@
     <?php
         $sum = 0;
         $count = 0;
-        
+        $sum_hum = 0;
+        $count_hum = 0;
+
         foreach ($tables as $table) {
             $sum += $table->temperature_value; 
             $count++; 
+            
+            $sum_hum += $table->humidity_value;
+            $count_hum ++;
         }
         
         $average = $sum / $count;
+        $average_h = $sum_hum / $count_hum;
     ?>
 
    
@@ -41,7 +47,7 @@
         
         <div class="card">
             <h2>Vlhkosť</h2>
-            <h3>100pm</h3>
+            <h3>{{round($average_h)}} %</h3>
             <img src="images/SVGRepo_iconCarrier.svg">
         </div>
     </div>
