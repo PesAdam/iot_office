@@ -26,6 +26,5 @@ Route::get('/kuchyna', function() {
     return view('card/kitchen');
 });
 
-Route::get('/zamestnanci', function (){
-    return view('card/employes');
-});
+Route::get('/zamestnanci', 'App\Http\Controllers\EmployesController@show');
+Route::get('/historia', 'App\Http\Controllers\EmployesController@showhistory');
