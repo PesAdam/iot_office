@@ -28,3 +28,7 @@ Route::get('/kuchyna', function() {
 
 Route::get('/zamestnanci', 'App\Http\Controllers\EmployesController@show');
 Route::get('/historia', 'App\Http\Controllers\EmployesController@showhistory');
+
+Route::get('/pracovisko/objekt1', 'App\Http\Controllers\PracoviskoController@Object_one');
+Route::get('/pracovisko/objekt2', 'App\Http\Controllers\PracoviskoController@Object_two');
+Route::get('/pracovisko/objekt3', 'App\Http\Controllers\PracoviskoController@Object_three');
