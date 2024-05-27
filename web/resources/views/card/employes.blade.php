@@ -5,6 +5,7 @@
 table {
     width: 80%;
     border-collapse: collapse;
+    margin: 0 auto; /* Center the table */
 }
 
 th, td {
@@ -20,6 +21,7 @@ th {
 tr:hover {
     background-color: #f5f5f5;
 }
+
 .button {
     background-color: #4CAF50; /* Zelená farba */
     border: none;
@@ -38,20 +40,36 @@ tr:hover {
     background-color: #45a049; /* Tmavozelená farba */
 }
 
-.spat{
+.spat {
     background: #222222;
-    padding: 5px 10px;
+    padding: 14px 28px;
 }
 
-</style>
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
 
+a {
+    text-decoration: none;
+    color: #fbfffc;
+    font-size: 20px;
+    margin: 4px 2px;
+}
+
+a:hover {
+    color: #45a049;
+}
+
+.headers h1 {
+    text-align: center;
+}
+</style>
 
 <div class="dashboard">
     <div class="headers">
         <h1>Zamestnanci</h1>
     </div>
-
-    <a href="/historia">historia</a>
 
     <table>
         <thead>
@@ -77,14 +95,14 @@ tr:hover {
             @endforeach
         </tbody>
     </table>
-    <br> <br>
+    <br><br>
 
-
-    <button onclick="refreshPage()" class="button">Obnoviť</button>
-    <button onclick="goBack()" class="button spat">Späť</button>
-
+    <div class="button-container">
+        {{-- <button onclick="refreshPage()" class="button">Obnoviť</button> --}}
+        <button class="button"><a href="/historia">História</a></button>
+        <button onclick="goBack()" class="button spat">Späť</button>
+    </div>
 </div>
-
 
 <script>
     function refreshPage() {
@@ -95,7 +113,5 @@ tr:hover {
         window.history.back();
     }
 </script>
-
-
 
 @endsection

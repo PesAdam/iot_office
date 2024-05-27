@@ -15,7 +15,7 @@ class EmployesController extends Controller
     }
 
     public function showhistory(){
-        $tables = EmployesHistory::all();
+        $tables = EmployesHistory::paginate(15);
 
         return view('card/historia', compact('tables'));
     }
