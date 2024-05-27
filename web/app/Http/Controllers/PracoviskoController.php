@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pracovisko;
+use Illuminate\Support\Facades\DB;
 
 class PracoviskoController extends Controller
 {
@@ -12,15 +13,27 @@ class PracoviskoController extends Controller
     }
 
     public function Object_one(){
-        return view('card/security1');
+        $security1 = DB::table('security_1')->orderBy('id', 'desc')->first();
+    
+        return view('card/security1',[
+            'security1' => $security1
+        ]);
 
     }
     public function Object_two(){
-        return view('card/security2');
+        $security2 = DB::table('security_2')->orderBy('id', 'desc')->first();
+    
+        return view('card/security2',[
+            'security2' => $security2
+        ]);
 
     }
     public function Object_three(){
-        return view('card/security3');
+        $security3 = DB::table('security_3')->orderBy('id', 'desc')->first();
+    
+        return view('card/security3',[
+            'security3' => $security3
+        ]);
 
     }
 }

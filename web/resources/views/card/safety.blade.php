@@ -104,9 +104,9 @@
         </div>
     </div>
     
-    <div class="button-container">
+    {{-- <div class="button-container">
         <button onclick="refreshPage()" class="button">Obnoviť</button>
-    </div>
+    </div> --}}
 
 </div>
 <script>

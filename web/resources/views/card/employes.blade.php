@@ -98,7 +98,7 @@ a:hover {
     <br><br>
 
     <div class="button-container">
-        <button onclick="refreshPage()" class="button">Obnoviť</button>
+        {{-- <button onclick="refreshPage()" class="button">Obnoviť</button> --}}
         <button class="button"><a href="/historia">História</a></button>
         <button onclick="goBack()" class="button spat">Späť</button>
     </div>
