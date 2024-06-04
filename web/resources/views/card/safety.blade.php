@@ -80,7 +80,7 @@
 
 <div class="dashboard">
     <div class="headers">
-        <h1>Zabezpecenie</h1>
+        <h1>Zabezpečenie</h1>
     </div>
     
     <div class="f">
@@ -97,63 +97,46 @@
                         <p>Objekt 3</p> 
                     </div>
                     <div>
-                        <p><span class="green">·</span> Aktivny</p>
-                        <p><span class="green">·</span> Aktivny</p>
-                        <p><span class="green">·</span> Aktivny</p>
+                        <p id="objekt1-status"><span class="green">·</span> Aktívny</p>
+                        <p id="objekt2-status"><span class="green">·</span> Aktívny</p>
+                        <p id="objekt3-status"><span class="green">·</span> Aktívny</p>
                     </div>
-    
                 </div>
-                
-                
             </div>
-            <div class="time">
+            <div class="time" id="time-data">
                 <h2>Security 1</h2>
-                @if ($security1)
-                    @if ($security1->motion == 1)
-                        <p>Pohyb bol zaznameny v case: {{ $security1->motion_time }}</p>
-                    @else
-                        <p>Pohyb nebol zaznameny</p>
-                    @endif
-                @else
-                    <p>No data available</p>
-                @endif
+                <p id="security1-status">Loading...</p>
             
                 <h2>Security 2</h2>
-                @if ($security2)
-                    @if ($security2->motion == 1)
-                        <p>Pohyb bol zaznameny v case: {{ $security2->motion_time }}</p>
-                    @else
-                        <p>Pohyb nebol zaznameny</p>
-                    @endif
-                @else
-                    <p>No data available</p>
-                @endif
+                <p id="security2-status">Loading...</p>
             
                 <h2>Security 3</h2>
-                @if ($security3)
-                    @if ($security3->motion == 1)
-                        <p>Pohyb bol zaznameny v case: {{ $security3->motion_time }}</p>
-                    @else
-                        <p>Pohyb nebol zaznameny</p>
-                    @endif
-                @else
-                    <p>No data available</p>
-                @endif
+                <p id="security3-status">Loading...</p>
             </div>
         </div>
     </div>
-    
-    {{-- <div class="button-container">
-        <button onclick="refreshPage()" class="button">Obnoviť</button>
-    </div> --}}
-
 </div>
+
 <script>
-    function refreshPage() {
-        location.reload();
+    function fetchData() {
+        fetch('/api/bezpecnost')
+            .then(response => response.json())
+            .then(data => {
+                console.log('loaded');
+                document.getElementById('objekt1-status').innerHTML = data.objekt1;
+                document.getElementById('objekt2-status').innerHTML = data.objekt2;
+                document.getElementById('objekt3-status').innerHTML = data.objekt3;
+
+                document.getElementById('security1-status').innerHTML = data.security1;
+                document.getElementById('security2-status').innerHTML = data.security2;
+                document.getElementById('security3-status').innerHTML = data.security3;
+            })
+            .catch(error => console.error('Error fetching data:', error));
     }
 
-</script>
+    setInterval(fetchData, 5000);
 
+    document.addEventListener('DOMContentLoaded', fetchData);
+</script>
 
 @endsection

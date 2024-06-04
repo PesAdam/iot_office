@@ -28,12 +28,5 @@ class PracoviskoController extends Controller
         ]);
 
     }
-    public function Object_three(){
-        $security3 = DB::table('security_3')->orderBy('id', 'desc')->first();
     
-        return view('card/security3',[
-            'security3' => $security3
-        ]);
-
-    }
 }

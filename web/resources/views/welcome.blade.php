@@ -41,12 +41,12 @@
     <body class="antialiased">
         @yield('content')    
         <div class="button-container">
-            <button onclick="refreshPage()" class="button">Obnoviť</button>
+            <button onclick="goBack()" class="button">Spať</button>
         </div>
     </body>
     <script>
-        function refreshPage() {
-            location.reload();
+        function goBack() {
+            history.back();
         }
     </script>
 </html>

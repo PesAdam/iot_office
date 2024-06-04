@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::get('/pracovisko', 'App\Http\Controllers\PracoviskoController@show');
 
 Route::get('/bezpecnost', 'App\Http\Controllers\SafetyController@show');
+Route::get('/api/bezpecnost', 'App\Http\Controllers\SafetyController@api');
 
 
 Route::get('/kuchyna', function() {

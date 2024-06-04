@@ -109,7 +109,7 @@
         {{ $tables->links() }}
     </div>
     <br>
-    <button onclick="goBack()" class="button spat">Späť</button>
+    {{-- <button onclick="goBack()" class="button spat">Späť</button> --}}
 </div>
 
 <script>
