@@ -12,11 +12,16 @@ body{
 }
 
 .headers{
+    margin: auto;
     text-align: center;
     margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .f{
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +41,6 @@ body{
     width: 210px;
     height: 260px;
     text-align: center;
-    margin-right: 15px;
     background-color: #d9d9d9;
     border-radius: 1rem;
     transition: background-color 0.5s, transform 0.5s;
@@ -45,12 +49,12 @@ body{
 .card h2 {
     font-size: 1.5rem;
     font-weight: 500;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0;
 }
 
 .card h3 {
-    margin-top: 0.25rem;
     font-size: 1.2rem;
+    margin-bottom: 0;
 }
 
 .card:hover {
@@ -60,6 +64,7 @@ body{
     
 }
 .card img{
+    margin-top: 1rem;
     transition: transform 0.5s, filter 0.5s;
     width: 150px;
     height: 120px;
@@ -69,3 +74,11 @@ body{
 }
 
 
+@media screen and (max-width: 768px) {
+    .sensors-date{
+        flex-direction: column !important;
+        max-width: 100% !important;
+    }
+
+    
+}

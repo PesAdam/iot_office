@@ -19,37 +19,7 @@
 }
 
 /* Flex container for the cards */
-.f {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
 
-/* Styling for each card */
-.card {
-    flex: 1;
-    padding: 20px;
-    border-radius: 8px;
-    /* background-color: #fff; */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-.card a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.card h2 {
-    font-size: 1.5em;
-    color: #333;
-    margin: 0;
-}
 
 </style>
 
@@ -60,13 +30,15 @@
     <div class="f">
         <a href="/pracovisko/objekt1">
             <div class="card">
-                <h2>Objekt 1</h2>
+                <h2>Pracovisko 1</h2>
+                <img src="images/SVGRepo_iconCarrier.svg" alt="">
             </div>
         </a>
 
         <a href="/pracovisko/objekt2">
             <div class="card">
-                <h2>Objekt 2</h2>
+                <h2>Pracovisko 2</h2>
+                <img src="images/SVGRepo_iconCarrier.svg" alt="">
             </div>
         </a>
         

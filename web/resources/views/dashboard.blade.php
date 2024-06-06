@@ -3,7 +3,9 @@
 
 <div class="dashboard">
     <div class="headers">
-        <h1>IOT OFFICE</h1>
+        <div>
+            <img style="width: 200px; height:100px;" src="images/logo.svg" alt="">
+        </div>
     </div>
     
     <div class="f">

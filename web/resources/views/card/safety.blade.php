@@ -8,10 +8,12 @@
     justify-content: space-between;
     padding: 20px;
     border-radius: 8px;
+    max-width: 100%;
 }
 
 .sensors-date{
     display: flex;
+    flex-direction: row;
     gap: 3rem;    
 }
 
@@ -22,6 +24,7 @@
     border-radius: 8px;
     background-color: #D9D9D9;
     width: 30rem;
+    max-width: 100%;
 }
 
 .sensors-header {
