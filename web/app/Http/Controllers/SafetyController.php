@@ -15,15 +15,12 @@ class SafetyController extends Controller
     {
         $security1 = DB::table('security_1')->orderBy('id', 'desc')->first(['motion', 'motion_time']);
         $security2 = DB::table('security_2')->orderBy('id', 'desc')->first(['motion', 'motion_time']);
-        $security3 = DB::table('security_3')->orderBy('id', 'desc')->first(['motion', 'motion_time']);
 
         return response()->json([
             'objekt1' => $security1 ? ($security1->motion ? '<span class="green">·</span> Aktívny' : '<span class="red">·</span> Neaktívny') : 'No data',
             'objekt2' => $security2 ? ($security2->motion ? '<span class="green">·</span> Aktívny' : '<span class="red">·</span> Neaktívny') : 'No data',
-            'objekt3' => $security3 ? ($security3->motion ? '<span class="green">·</span> Aktívny' : '<span class="red">·</span> Neaktívny') : 'No data',
             'security1' => $security1 ? ($security1->motion ? 'Pohyb bol zaznamený v čase: ' . $security1->motion_time : 'Pohyb nebol zaznameny') : 'No data available',
             'security2' => $security2 ? ($security2->motion ? 'Pohyb bol zaznamený v čase: ' . $security2->motion_time : 'Pohyb nebol zaznameny') : 'No data available',
-            'security3' => $security3 ? ($security3->motion ? 'Pohyb bol zaznamený v čase: ' . $security3->motion_time : 'Pohyb nebol zaznameny') : 'No data available',
         ]);
     }
 }

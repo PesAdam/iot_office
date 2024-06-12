@@ -97,12 +97,10 @@
                     <div>
                         <p>Objekt 1</p>
                         <p>Objekt 2</p>
-                        <p>Objekt 3</p> 
                     </div>
                     <div>
                         <p id="objekt1-status"><span class="green">·</span> Aktívny</p>
                         <p id="objekt2-status"><span class="green">·</span> Aktívny</p>
-                        <p id="objekt3-status"><span class="green">·</span> Aktívny</p>
                     </div>
                 </div>
             </div>
@@ -113,8 +111,6 @@
                 <h2>Security 2</h2>
                 <p id="security2-status">Loading...</p>
             
-                <h2>Security 3</h2>
-                <p id="security3-status">Loading...</p>
             </div>
         </div>
     </div>
@@ -126,13 +122,12 @@
             .then(response => response.json())
             .then(data => {
                 console.log('loaded');
+                console.log(data);
                 document.getElementById('objekt1-status').innerHTML = data.objekt1;
                 document.getElementById('objekt2-status').innerHTML = data.objekt2;
-                document.getElementById('objekt3-status').innerHTML = data.objekt3;
 
                 document.getElementById('security1-status').innerHTML = data.security1;
                 document.getElementById('security2-status').innerHTML = data.security2;
-                document.getElementById('security3-status').innerHTML = data.security3;
             })
             .catch(error => console.error('Error fetching data:', error));
     }
